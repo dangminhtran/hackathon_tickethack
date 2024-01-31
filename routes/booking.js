@@ -6,12 +6,12 @@ const Booking = require('../models/booking');
 // Add booking
 
 router.post('/', (req, res) => {
-    Booking.findOne({ trips: req.body.id }).then(data => {
+    Booking.findOne({ trips: req.body._id }).then(data => {
         if (data) {
             return false;
         }
 
-        const newBooking = new Booking({trips: req.body.id})
+        const newBooking = new Booking({trips: req.body._id})
         newBooking.save().then((data) => res.json({ tripAdded: data }))
         
         });

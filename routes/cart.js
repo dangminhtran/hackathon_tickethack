@@ -3,7 +3,7 @@ var router = express.Router();
 const Cart = require('../models/cart');
 
 // Find trip added to cart
-router.post('/add', (req, res) => {
+router.post('/', (req, res) => {
     Cart.findOne({ trip: req.body.id }).then(data => {
         if (data) {
             return false;
