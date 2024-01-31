@@ -3,6 +3,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var moment = require('moment')
+moment().format()
+
 require('./models/connection');
 
 var indexRouter = require('./routes/index');
