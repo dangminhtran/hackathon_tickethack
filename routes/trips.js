@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 });
 
 // Find trip given user input
-router.get("/search", (req, res) => {
+router.get("/", (req, res) => {
     Trip.find({ departure: req.body.departure, arrival: req.body.arrival, date: req.body.date, })
     .then(data => {
       if (data) {
