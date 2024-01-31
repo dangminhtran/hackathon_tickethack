@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
 
 // Show trips in cart
 router.get('/', (req, res) => {
-    Cart.find().then(data => {
+    Cart.find().populate('trip').then(data => {
         if(!data) {
             res.json({result: false});
         }
