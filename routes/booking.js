@@ -20,7 +20,7 @@ router.post('/', (req, res) => {
 // Show bookings
 
 router.get('/', (req, res) => {
-    Booking.find().then(data => {
+    Booking.find().populate('trip').then(data => {
         if(!data) {
             res.json({result: false});
         }
